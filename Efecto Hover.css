@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212; /* Fondo oscuro para resaltar las tarjetas */
+    font-family: 'Roboto', Arial, sans-serif; /* Fuente moderna */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaciado entre tarjetas */
+    justify-content: center;
+}
+
+.card {
+    background: #1e1e1e; /* Fondo gris oscuro */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 150px; /* Tamaño inicial pequeño */
+    height: 200px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.5); /* Incrementa el tamaño */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+    z-index: 10; /* Para que se superponga al resto */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card .content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6); /* Fondo translúcido */
+    padding: 10px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .content {
+    opacity: 1; /* Muestra el contenido al pasar el cursor */
+}
+
+.card .content h2 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.card .content p {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin: 0;
+}
